@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-10.15
+
+    steps:
+      - name: Checkout
+        if: success()
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.API_GITHUB_TOKEN }}
+
+      - name: Release
+        if: success()
+        uses: cycjimmy/semantic-release-action@v2.3.0
+        with:
+          extra_plugins: |
+            @semantic-release/exec@5.0.0
+            @semantic-release/git@9.0.0
+            @google/semantic-release-replace-plugin@1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_GITHUB_TOKEN }}

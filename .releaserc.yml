@@ -1,0 +1,47 @@
+---
+branches:
+  - master
+plugins:
+  - "@semantic-release/commit-analyzer"
+
+  - #
+    - "@google/semantic-release-replace-plugin"
+    - replacements:
+        - files:
+            - AppSigner/Info.plist
+          from: <key>CFBundleShortVersionString<\/key>\n?\s*<string>(.+)<\/string>
+          to: <key>CFBundleShortVersionString</key><string>${nextRelease.version}</string>
+          results:
+            - file: AppSigner/Info.plist
+              hasChanged: true
+              numMatches: 1
+              numReplacements: 1
+          countMatches: true
+        - files:
+            - AppSigner/Info.plist
+          from: <key>CFBundleVersion<\/key>\n?\s*<string>(.+)<\/string>
+          to: <key>CFBundleVersion</key><string>${nextRelease.version}</string>
+          results:
+            - file: AppSigner/Info.plist
+              hasChanged: true
+              numMatches: 1
+              numReplacements: 1
+          countMatches: true
+  - #
+    - "@semantic-release/git"
+    - assets:
+        - AppSigner/Info.plist
+      message: "chore(release): ${nextRelease.version} [skip ci]"
+
+  - #
+    - "@semantic-release/exec"
+    - prepareCmd: bash build.sh
+
+  - "@semantic-release/release-notes-generator"
+
+  - #
+    - "@semantic-release/github"
+    - successComment: false
+      failComment: false
+      assets:
+        - path: iOS App Signer.zip
