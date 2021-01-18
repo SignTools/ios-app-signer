@@ -105,12 +105,6 @@
                                     <action selector="fixSigning:" target="aMe-uV-AHx" id="11N-yH-9Q4"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Check for Updates" id="z6H-Tg-1uh">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="checkForUpdates:" target="aMe-uV-AHx" id="teq-CI-brW"/>
-                                </connections>
-                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>

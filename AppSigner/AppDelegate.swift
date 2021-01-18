@@ -41,26 +41,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func viewLog(_ sender: AnyObject) {
         NSWorkspace.shared.openFile(Log.logName)
     }
-    @IBAction func checkForUpdates(_ sender: NSMenuItem) {
-        UpdatesController.checkForUpdate(forceShow: true)
-        func updateCheckStatus(_ status: Bool, data: Data?, response: URLResponse?, error: Error?){
-            if status == false {
-                DispatchQueue.main.async {
-                    let alert = NSAlert()
-                    
-                    
-                    if error != nil {
-                        alert.messageText = "There was a problem checking for a new version."
-                        alert.informativeText = "More information is available in the application log."
-                        Log.write(error!.localizedDescription)
-                    } else {
-                        alert.messageText = "You are currently running the latest version."
-                    }
-                    alert.runModal()
-                }
-            }
-        }
-        UpdatesController.checkForUpdate(forceShow: true, callbackFunc: updateCheckStatus)
-    }
 }
 

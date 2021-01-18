@@ -169,7 +169,6 @@ class MainView: NSView, URLSessionDataDelegate, URLSessionDelegate, URLSessionDo
                 
                 NSApplication.shared.terminate(self)
             }
-            UpdatesController.checkForUpdate()
         }
     }
     
