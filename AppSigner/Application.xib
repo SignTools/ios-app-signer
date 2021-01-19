@@ -71,29 +71,13 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Donate" id="2eI-1V-L75">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Donate" id="T5I-ob-6B4">
-                        <items>
-                            <menuItem title="Buy Me A Drink" id="vr0-au-9q5" customClass="NSMenuLink" customModule="iOS_App_Signer" customModuleProvider="target">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="url" value="https://www.paypal.me/DanTheMan827"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="nsMenuLinkClick:" target="aMe-uV-AHx" id="JMU-0p-WME"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
-                </menuItem>
                 <menuItem title="Help" id="wpr-3q-Mcd">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                         <items>
                             <menuItem title="GitHub Project Page" keyEquivalent="?" id="FKE-Sm-Kum" customClass="NSMenuLink" customModule="iOS_App_Signer" customModuleProvider="target">
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="url" value="https://github.com/DanTheMan827/ios-app-signer"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="url" value="https://github.com/ViRb3/ios-app-signer"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nsMenuLinkClick:" target="aMe-uV-AHx" id="kuT-Sl-Lfb"/>
